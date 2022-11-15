@@ -1,0 +1,25 @@
+-- LEVEL 00 --
+find file belonging to flag00, found a string into cesar into password :)
+the file content was 'cdiiddwpgswtgt'
+put it into calculis.net/code-cesar and found a readable string 'nottoohardhere'
+
+flag : x24ti5gi3x0ol2eh4esiuxias
+
+
+-- LEVEL 01 --
+https://www.cyberciti.biz/faq/where-are-the-passwords-of-the-users-located-in-linux/
+cat /etc/passwd gives the encrypted password, command johns cracks it into password :)
+which is 'abcdefg'
+
+flag : f2av5il02puano7naaf6adaaf
+
+
+-- LEVEL 02 --
+We did ls on our home directory and found a .pcap
+It's a file containing a network dump
+https://serverfault.com/questions/38626/how-can-i-read-pcap-files-in-a-friendly-format
+tcpdump -qns 0 -X -r ./level02.pcap
+opened the file in wireshark and saw Password:, found data 'ft_wandr...NDRel.L0L.....'
+since Delphin is very smart he found that 0x7f (the points) were DELETE, so everytime we encounter them we removed a character, which led to ft_waNDReL0L..... so we tried 'ft_waNDReL0L'
+
+flag: kooda2puivaav1idi4f57q8iq
