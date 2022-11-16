@@ -1,0 +1,5 @@
+The perl script simply echoes the x variable given in the URL (we deduced it with the CGI include and param("x");
+
+Then, we found that backtick in perl is the same as the exec call, so knowning we echo $y, which equals the x variable given, we can echo $(getflag), since the server is runned as flag04, this extracts the resultof getflag to print it. We first tried this in local by running the perl script, but later found out about the localhost:4747 comment, so we just tried to curl it and it worked
+
+curl localhost:4747/?x='$(getflag)'
