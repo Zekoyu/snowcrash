@@ -2,13 +2,6 @@ Since we have no file given, first do a 'find / -user flag05'
 This gives us 2 files: /usr/sbin/openarenaserver and /rofs/usr/sbin/openarenaserver
 We have no permission on the later, for cat'ing the former gives us a script (we put in script.sh)
 We can see that the script executes all scripts in /opt/openarenaserver with a timeout of 5 seconds, then delete them
-So we tried putting a simple script with getflag in it, it is deleted so the command is runned (automatically probably, since we didn't do anything), but no output is printed
-Second idea is to put 'getflag > /tmp/pouet' in our script, so that the output is saved (since we dont have permission to create files in our home we put it in /tmp like previously done)
-The file we did look something like this:
-
-#!/bin/sh
-echo Pouet > /tmp/pouet.txt
-getflag >> /tmp/pouet.txt
-
-Then we can get the content by just doing 'cat /tmp/pouet.txt'
-And it did nothing :( 
+scripts are executed as flag05, so we don't have the output of the given script
+but we can still redirect them to a file, and read it
+so we just put a script in /opt/openarenaserver with "getflag >/var/crash/bonjour" and then gg a tous
