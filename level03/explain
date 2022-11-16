@@ -1,0 +1,4 @@
+
+By doing a objdump + readelf on level03 binary we can see that it 
+set the uid to flag03 and then exec("/usr/bin/env echo ...")
+so by changing PATH to execute a custom echo (see echo.c) we can access a shell as flag03
