@@ -23,3 +23,9 @@ opened the file in wireshark and saw Password:, found data 'ft_wandr...NDRel.L0L
 since Delphin is very smart he found that 0x7f (the points) were DELETE, so everytime we encounter them we removed a character, which led to ft_waNDReL0L..... so we tried 'ft_waNDReL0L'
 
 flag: kooda2puivaav1idi4f57q8iq
+
+-- LEVEL 03 --
+We are only given an executable which prints "Exploit me"
+So we used objdump -d ./level03 to find out the content of the program
+(objdump -d name_of_your_obj_file | awk -F"\n" -v RS="\n\n" '$1 ~ /main/')
+When searching the function called (getgid, getuid, setresgid, setresuid and system) we found a post (https://stackoverflow.com/q/8304396) talking about vulnerabilities with these functions
