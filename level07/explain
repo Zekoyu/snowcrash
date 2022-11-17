@@ -1,0 +1,6 @@
+We are given an executable, as usual an objdump shows us it uses getenv, asprintf for 'echo %s' and them system the result
+the getenv seems to use the LOGNAME variable, which is then put inside argument of asprint (we can see the address is 0x8048688 + 0x8), which results in LOGNAME is .rodata section (readelf -x .rodata ./level07)
+
+We can verify this by running 'LOGNAME=test ./level07' which prints 'test' because internally it runs 'echo test'
+So we can use the same technique as earlier by simply doing:
+LOGNAME='$(getflag)', which results in 'echo $(getflag)' which outputs the flag
