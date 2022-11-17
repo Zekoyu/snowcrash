@@ -1,5 +1,5 @@
 preg_replace("/(\[x (.*)\])/e", "f(\"\\2\")", $x);
-this line above (which is present in the given scrypt) basicaly read from a file 
+this line above (which is present in the given script) basicaly read from a file 
 than take the 'pouet' part of an expression of the form ([x pouet]) 
 and the call the function f with the 'pouet' as argument.  
 We can use this to execute any command we want.

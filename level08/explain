@@ -1,0 +1,4 @@
+
+We have a file called token which probably contain the flag but we don't have the permission to open it.
+./level08 read content of a file as flag08 as long as the name of the file don't contain token.
+So we create a symbolic link to the token and then gg
