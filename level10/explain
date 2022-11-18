@@ -2,3 +2,12 @@ By exploring the binary we can see that it wants to connect with hostname and fi
 We tried http server it didnt work then tcp server using 'nc -lk 6969' and it receives the file content 
 (-l = server mode, -k = don't stop after first receive)
 cmd is './level10 <file> 127.0.0.1'
+
+
+by looking at the asm of the exec (objdump -d level10) 
+
+we figured out that the access function have a vulnerability -> https://stackoverflow.com/questions/7925177/access-security-hole
+The solution was to create a symlink on a file that we have access to, run ./level10 with it
+and then between the time where the access function is called and the open function is called
+replace the symlink with another pointing to token 
+(see script.sh)
