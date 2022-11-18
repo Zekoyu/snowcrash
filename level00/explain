@@ -1,0 +1,6 @@
+We don't have any info, so our first idea was to check /etc/passwd but we found nothing
+Next we simply did a 'find / 2> /dev/null' but there were to many files so we tried filtering with '-user level00' but we found nothing useful
+We then tried the same with '-user flag00' and we found only 2 files: /usr/bin/john and /rofs/usr/bin/john, we cannot execute them, but simply doing a cat on them shows the flag
+Except it didn't work, so it's probably encrypted, the simplest cypher we can think of is cesar (aka. ROT), but we didn't know by how much to rotate, so we tried all possibilities
+(https://calculis.net/code-cesar)
+And we found one that could match: 'nottoohardhere', it doesn't work as password for level01 but it does for flag00, then we just launch getflag and gg
