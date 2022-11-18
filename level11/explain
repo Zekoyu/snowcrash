@@ -1,0 +1,2 @@
+Quit the same as a previous exercise, lua scipt basicely take input and pass to an exec
+(something like 'echo arg') so we just sent $(getflag > /tmp/flag) and gg a tous
