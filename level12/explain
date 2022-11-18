@@ -1,0 +1,7 @@
+The perl scipt take querry param x, then do upper case on it, 
+and then call egrep $x ... so we can probably put code to exec in it.
+the code should be in uppercase format so we can create our own exec in uppercase format
+then we just have to add the binary to the pass and assign x to $(OUR_EXEC).
+
+until now it don't seem to work on the real script but this is maybe because of the wrong format I give in the querry param (something like x="$(EXEC)"&y=0 )
+(it work with custom script test.pl in local)
