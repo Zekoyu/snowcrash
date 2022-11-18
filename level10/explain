@@ -1,0 +1,4 @@
+By exploring the binary we can see that it wants to connect with hostname and file as argument
+We tried http server it didnt work then tcp server using 'nc -lk 6969' and it receives the file content 
+(-l = server mode, -k = don't stop after first receive)
+cmd is './level10 <file> 127.0.0.1'
