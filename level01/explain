@@ -1,0 +1,7 @@
+https://www.cyberciti.biz/faq/where-are-the-passwords-of-the-users-located-in-linux/
+
+We aswell don't have any informations, so as before we try to cat /etc/passwd, and we found that the hash of the password isn't encrypted for flag01
+'flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash'
+if it was encrypted, we would have a 'x' instead of the password
+We tried to login with this password, but we found out it is encrypted, and used a tool called john the ripper to decrypt it
+by doing 'john hash 42hDRfypTqqnw' we get 'abcdefg', which we can use to login as flag01

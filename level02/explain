@@ -1,0 +1,6 @@
+We did ls on our home directory and found a .pcap
+It's a file containing a network dump
+https://serverfault.com/questions/38626/how-can-i-read-pcap-files-in-a-friendly-format
+tcpdump -qns 0 -X -r ./level02.pcap
+opened the file in wireshark and saw Password:, found data 'ft_wandr...NDRel.L0L.....'
+since Delphin is very smart he found that 0x7f (the points) were DELETE, so everytime we encounter them we removed a character, which led to ft_waNDReL0L..... so we tried 'ft_waNDReL0L'
