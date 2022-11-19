@@ -1,0 +1,7 @@
+Since the previous method seems to have worked well and we have no files in this level.
+We just tried to readelf on getflag and there is also a function called ft_des.
+When looking at the .rodata of /bin/getflag, we can find all the encrpyted flags NULL terminated, the last one is bigger than the others so it seemed strange.
+We tried using it anyways (since it was the 15th, so the one we wanted) without truncating to 25 chars first, then as previously using gdb
+we ran ft_des("g <t61:|4_|!@IF.-62FH&G~DCK/Ekrvvdwz?v|") and it returned a string.
+Since we have no way to check if this string is the password of level15 (since level14 is the last), we first tried root, with no success,
+Then we tried it on flag14 and it worked :D, so the flag14 is the password of flag14
