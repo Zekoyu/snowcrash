@@ -1,0 +1,11 @@
+We found that the executable had a ft_des function but wasn't called, and in the .rodata section there were some strange symbols, maybe the encrypted flag
+https://stackoverflow.com/questions/20258940/is-there-any-command-similar-to-objcopy-which-can-remove-symbol-from-shared-obje
+We run strip to remove the main so that we can link with ft_des and try things but it didn't work
+
+However it was a good idea because next we used gdb to call ft_des
+The first prototype that comes to mind is '(char *) ft_des(char *)'
+so we run 'gdb ./level13'
+'break main' (to stay in the executable)
+'run' (to run)
+'p (char *) ft_des("boe]!ai0FB@.:|L6l@A?>qJ}I")' (this string is found in .rodata, see https://sourceware.org/gdb/onlinedocs/gdb/Calling.html sec. 17.5.1 for infos)
+Annddd, it returns something that looks like a flag :D (it works)
